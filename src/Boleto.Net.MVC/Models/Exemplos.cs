@@ -122,13 +122,13 @@ namespace Boleto.Net.MVC.Models
 
         public string Banrisul()
         {
-            DateTime vencimento = new DateTime(2008, 02, 07);
+            DateTime vencimento = DateTime.Now.Date.AddDays(-120);
 
             Cedente c = new Cedente("00.000.000/0000-00", "Empresa de Atacado", "1234", "5", "12345678", "9");
 
             c.Codigo = "00000000504";
 
-            BoletoNet.Boleto b = new BoletoNet.Boleto(vencimento, 45.50m, "18", "12345678901", c);
+            BoletoNet.Boleto b = new BoletoNet.Boleto(vencimento, 45.50m, "18", "12345678", c);
 
             b.Sacado = new Sacado("000.000.000-00", "Fulano de Silva");
             b.Sacado.Endereco.End = "SSS 154 Bloco J Casa 23";
@@ -155,7 +155,7 @@ namespace Boleto.Net.MVC.Models
 
         public string Basa()
         {
-            DateTime vencimento = new DateTime(2008, 02, 07);
+            DateTime vencimento = DateTime.Now.Date.AddDays(-120);
 
             Cedente c = new Cedente("00.000.000/0000-00", "Empresa de Atacado", "1234", "5", "12345678", "9");
 
@@ -181,7 +181,7 @@ namespace Boleto.Net.MVC.Models
 
         public string Bradesco()
         {
-            DateTime vencimento = new DateTime(2009, 12, 17);
+            DateTime vencimento = DateTime.Now.Date.AddDays(-120);
 
             Instrucao_Bradesco item = new Instrucao_Bradesco(9, 5);
 
@@ -223,7 +223,7 @@ namespace Boleto.Net.MVC.Models
 
         public string BRB()
         {
-            DateTime vencimento = new DateTime(2007, 11, 15);
+            DateTime vencimento = DateTime.Now.Date.AddDays(-120);
 
             Cedente c = new Cedente("00.000.000/0000-00", "Empresa de Atacado", "208", "", "010357", "6");
             c.Codigo = "13000";
@@ -251,7 +251,7 @@ namespace Boleto.Net.MVC.Models
 
         public string Caixa()
         {
-            DateTime vencimento = new DateTime(2008, 12, 20);
+            DateTime vencimento = DateTime.Now.Date.AddDays(-120);
 
             Cedente c = new Cedente("000.000.000-00", "Boleto.net ILTDA", "1234", "12345678", "9");
 
@@ -280,7 +280,7 @@ namespace Boleto.Net.MVC.Models
             #endregion Instruções
 
             EspecieDocumento_Caixa espDocCaixa = new EspecieDocumento_Caixa();
-            b.EspecieDocumento =  new EspecieDocumento_Caixa(espDocCaixa.getCodigoEspecieByEnum(EnumEspecieDocumento_Caixa.DuplicataMercantil));
+            b.EspecieDocumento = new EspecieDocumento_Caixa(espDocCaixa.getCodigoEspecieByEnum(EnumEspecieDocumento_Caixa.DuplicataMercantil));
             b.NumeroDocumento = "00001";
             b.DataProcessamento = DateTime.Now;
             b.DataDocumento = DateTime.Now;
@@ -293,7 +293,7 @@ namespace Boleto.Net.MVC.Models
 
         public string HSBC()
         {
-            DateTime vencimento = new DateTime(2008, 7, 4);
+            DateTime vencimento = DateTime.Now.Date.AddDays(-120);
 
             Cedente c = new Cedente("00.000.000/0000-00", "Minha empresa", "0000", "", "00000", "00");
             // Código fornecido pela agencia, NÃO é o numero da conta
@@ -317,7 +317,7 @@ namespace Boleto.Net.MVC.Models
 
         public string Itau()
         {
-            DateTime vencimento = DateTime.Now.AddDays(1);
+            DateTime vencimento = DateTime.Now.Date.AddDays(-120);
 
             Instrucao_Itau item1 = new Instrucao_Itau(9, 5);
             Instrucao_Itau item2 = new Instrucao_Itau(81, 10);
@@ -359,7 +359,7 @@ namespace Boleto.Net.MVC.Models
 
         public string Real()
         {
-            DateTime vencimento = new DateTime(2008, 12, 16);
+            DateTime vencimento = DateTime.Now.Date.AddDays(-120);
 
             Cedente c = new Cedente("00.000.000/0000-00", "Coloque a Razão Social da sua empresa aqui", "1234", "12345");
             c.Codigo = "12345";
@@ -388,7 +388,7 @@ namespace Boleto.Net.MVC.Models
 
         public string Safra()
         {
-            DateTime vencimento = new DateTime(2007, 9, 10);
+            DateTime vencimento = DateTime.Now.Date.AddDays(-120);
 
             Cedente c = new Cedente("00.000.000/0000-00", "Empresa de Atacado", "0542", "5413000");
 
@@ -423,7 +423,7 @@ namespace Boleto.Net.MVC.Models
 
         public string Santander()
         {
-            DateTime vencimento = new DateTime(2003, 5, 15);
+            DateTime vencimento = DateTime.Now.Date.AddDays(-120);
 
             Cedente c = new Cedente("00.000.000/0000-00", "Empresa de Atacado", "2269", "130000946");
             c.Codigo = "1795082";
@@ -458,7 +458,7 @@ namespace Boleto.Net.MVC.Models
 
         public string Sicoob()
         {
-            DateTime vencimento = new DateTime(2007, 11, 15);
+            DateTime vencimento = DateTime.Now.Date.AddDays(-120);
 
 
             Cedente c = new Cedente("00.000.000/0000-00", "Empresa de Atacado", "4444", "", "", "");
@@ -485,8 +485,7 @@ namespace Boleto.Net.MVC.Models
 
         public string Sicred()
         {
-
-            DateTime vencimento = DateTime.Now.AddDays(1);
+            DateTime vencimento = DateTime.Now.Date.AddDays(-120);
 
             Instrucao_Sicredi item1 = new Instrucao_Sicredi(9, 5);
             Instrucao_Sicredi item2 = new Instrucao_Sicredi();
@@ -520,7 +519,7 @@ namespace Boleto.Net.MVC.Models
 
         public string Sudameris()
         {
-            DateTime vencimento = new DateTime(2007, 9, 10);
+            DateTime vencimento = DateTime.Now.Date.AddDays(-120);
 
             Cedente c = new Cedente("00.000.000/0000-00", "Empresa de Atacado", "0501", "6703255");
 
@@ -568,7 +567,7 @@ namespace Boleto.Net.MVC.Models
             // ----------------------------------------------------------------------------------------
             // Exemplo 2
 
-            DateTime vencimento = new DateTime(2008, 03, 10);
+            DateTime vencimento = DateTime.Now.Date.AddDays(-120);
 
             Cedente c = new Cedente("00.000.000/0000-00", "Next Consultoria Ltda.", "0123", "100618", "9");
             c.Codigo = "203167";
@@ -600,7 +599,7 @@ namespace Boleto.Net.MVC.Models
 
         public byte[] ItauPDF()
         {
-            DateTime vencimento = DateTime.Now.AddDays(1);
+            DateTime vencimento = DateTime.Now.Date.AddDays(-120);
 
             Instrucao_Itau item1 = new Instrucao_Itau(9, 5);
             Instrucao_Itau item2 = new Instrucao_Itau(81, 10);
